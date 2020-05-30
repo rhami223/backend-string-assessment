@@ -4,7 +4,7 @@ Kenzie assignment: String2
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "???"
+__author__ = "Ramon Hamilton"
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -23,8 +23,13 @@ __author__ = "???"
 
 
 def verbing(s):
-    # your code here
-    return
+    length = len(s)
+    if length > 2:
+       if s[-3:] == "ing":
+          s += "ly"
+    else:  
+        s += "ing"
+    return s
 
 
 # E. not_bad
@@ -37,9 +42,11 @@ def verbing(s):
 
 
 def not_bad(s):
-    # your code here
-    return
-
+    isNot = s.find("not")
+    isBad = s.find("bad")
+    if isBad > isNot:
+        s = s.replace(s[isNot:(isBad + 3)], "good")
+    return s
 
 # F. front_back
 # Consider dividing a string into two halves.
@@ -52,9 +59,23 @@ def not_bad(s):
 
 
 def front_back(a, b):
-    # your code here
-    return
-
+    isStrA = len(a)
+    isStrB = len(b)
+    if isStrA %  == 0:
+        isStrALength = isStrA // 2
+    else:
+        isStrALength = (isStrA // 2) + 1
+​     if isStrB %  == 0:
+        isStrBLength = isStrB // 2
+    else:
+        isStrBLength = (isStrB // 2) + 1
+    
+    isStrAFront = a[0:isStrALength]
+    isStrABack = a[isStrALength:]
+    isStrBFront = b[0:isStrBLength]
+    isStrBBack = b[isStrBLength:]
+    
+    return isStrAFront + isStrBFront + isStrABack + isStrBBack
 
 # Provided simple test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
