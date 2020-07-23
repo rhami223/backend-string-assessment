@@ -58,24 +58,35 @@ def not_bad(s):
 #   a-front + b-front + a-back + b-back
 
 
+
 def front_back(a, b):
-    isStrA = len(a)
-    isStrB = len(b)
-    if isStrA %  == 0:
-        isStrALength = isStrA // 2
-    else:
-        isStrALength = (isStrA // 2) + 1
-​     if isStrB %  == 0:
-        isStrBLength = isStrB // 2
-    else:
-        isStrBLength = (isStrB // 2) + 1
+    a_mid = len(a) // 2
+    b_mid = len(b) // 2
+    if len(a) % 2:
+        a_mid += 1
+    if len(b) % 2:
+        b_mid += 1
+    return a[:a_mid] + b[:b_mid] + a[a_mid:] + b[b_mid:] 
+
+
+# def front_back(a, b):
+#     isStrA = len(a)
+#     isStrB = len(b)
+#     if isStrA %  == 0:
+#         isStrALength = isStrA // 2
+#     else:
+#         isStrALength = (isStrA // 2) + 1
+# ​     if isStrB %  == 0:
+#         isStrBLength = isStrB // 2
+#     else:
+#         isStrBLength = (isStrB // 2) + 1
     
-    isStrAFront = a[0:isStrALength]
-    isStrABack = a[isStrALength:]
-    isStrBFront = b[0:isStrBLength]
-    isStrBBack = b[isStrBLength:]
+#     isStrAFront = a[0:isStrALength]
+#     isStrABack = a[isStrALength:]
+#     isStrBFront = b[0:isStrBLength]
+#     isStrBBack = b[isStrBLength:]
     
-    return isStrAFront + isStrBFront + isStrABack + isStrBBack
+#     return isStrAFront + isStrBFront + isStrABack + isStrBBack
 
 # Provided simple test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
